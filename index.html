@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -26,6 +26,13 @@
       border-radius: 8px;
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
       text-align: center;
+    }
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
     }
     h1 {
       font-size: 2.5em;
@@ -68,6 +75,14 @@
     .project-link:hover {
       text-decoration: underline;
     }
+    /* Star rating */
+    .star-rating {
+      margin-top: 10px;
+    }
+    .star-rating i {
+      color: #FFD700;
+      font-size: 1.2em;
+    }
     /* Social media icons */
     .social-media {
       margin-top: 20px;
@@ -81,48 +96,75 @@
     .social-media a:hover {
       color: #0073e6;
     }
+    .social-media label {
+      display: block;
+      font-size: 0.9em;
+      color: #666;
+    }
   </style>
 </head>
 <body>
   <div class="container">
+    <!-- Profile Image -->
+    <img src="Nuel.jpg" alt="Emmanuel Agafie" class="profile-image">
+    
     <h1>Emmanuel Agafie</h1>
     <p>B.Sc. in Applied Geophysics - Web Developer Portfolio</p>
 
     <div class="project">
       <h2 class="project-title"><span class="emoji">👉</span><a class="project-link" href="https://nozel-silva.github.io/skynet/" target="_blank">Project Skynet</a></h2>
       <p class="project-description">Built 2 years ago. Skynet uses names to reveal information about people.</p>
+      <div class="star-rating">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+      </div>
     </div>
 
     <div class="project">
       <h2 class="project-title"><span class="emoji">👉</span><a class="project-link" href="https://nozel-silva.github.io/p.wave/index.html" target="_blank">Project P.Waves</a></h2>
       <p class="project-description">Built a year ago for the 2018/19 Applied Geophysics students of the University of Benin.</p>
+      <div class="star-rating">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+      </div>
     </div>
 
     <div class="project">
       <h2 class="project-title"><span class="emoji">👉</span><a class="project-link" href="https://nozel-silva.github.io/Drop-game/" target="_blank">Drop Game</a></h2>
       <p class="project-description">A play-to-earn game commonly used in airdrops.</p>
+      <div class="star-rating">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+      </div>
     </div>
 
     <div class="project">
       <h2 class="project-title"><span class="emoji">👉</span><a class="project-link" href="https://nozel-silva.github.io/Reveal-/" target="_blank">Reveal</a></h2>
       <p class="project-description">A play-to-earn game, which can be integrated into gambling sites.</p>
+      <div class="star-rating">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+      </div>
     </div>
 
     <div class="project">
       <h2 class="project-title"><span class="emoji">👉</span><a class="project-link" href="https://nozel-silva.github.io/Shooter/" target="_blank">Shooter</a></h2>
       <p class="project-description">A play-to-earn and time-killing game.</p>
+      <div class="star-rating">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+      </div>
     </div>
 
     <div class="project">
       <h2 class="project-title"><span class="emoji">👉</span><a class="project-link" href="https://safegoals.xyz" target="_blank">Sports Prediction AI</a></h2>
       <p class="project-description">The pinnacle of sports prediction AI.</p>
+      <div class="star-rating">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+      </div>
     </div>
 
     <!-- Social Media Links -->
     <div class="social-media">
       <a href="https://www.google.com" target="_blank"><i class="fab fa-google"></i></a>
-      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.facebook.com/Emmanuel Agafie" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter/Nuel_sama✨"></i></a>
+      <a href="https://wa.me/2348035527091" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
   </div>
 </body>
