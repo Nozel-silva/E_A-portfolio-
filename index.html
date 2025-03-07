@@ -1,171 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emmanuel Agafie - Web Developer Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    /* General styling */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-    .container {
-      max-width: 800px;
-      width: 90%;
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-      text-align: center;
-    }
-    .profile-image {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-size: 2.5em;
-      color: #333;
-      margin-bottom: 5px;
-    }
-    p {
-      color: #666;
-      font-size: 1em;
-    }
-    .project {
-      background-color: #fafafa;
-      border-radius: 8px;
-      margin: 20px 0;
-      padding: 20px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      text-align: left;
-      position: relative;
-    }
-    .project-title {
-      font-size: 1.5em;
-      color: #0073e6;
-      display: flex;
-      align-items: center;
-      margin: 0;
-    }
-    .project-title .emoji {
-      margin-right: 10px;
-    }
-    .project-description {
-      font-size: 1em;
-      color: #555;
-      margin-top: 5px;
-    }
-    .project-link {
-      text-decoration: none;
-      color: #0073e6;
-      font-weight: bold;
-    }
-    .project-link:hover {
-      text-decoration: underline;
-    }
-    /* Star rating */
-    .star-rating {
-      margin-top: 10px;
-    }
-    .star-rating i {
-      color: #FFD700;
-      font-size: 1.2em;
-    }
-    /* Social media icons */
-    .social-media {
-      margin-top: 20px;
-    }
-    .social-media a {
-      color: #555;
-      margin: 0 10px;
-      font-size: 1.5em;
-      text-decoration: none;
-    }
-    .social-media a:hover {
-      color: #0073e6;
-    }
-    .social-media label {
-      display: block;
-      font-size: 0.9em;
-      color: #666;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuel_sama Portfolio</title>
+<style>
+  /* Global Styles */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+  }
+  header {
+    padding: 20px;
+  }
+  .profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #0f0;
+    margin: 0 auto;
+    display: block;
+  }
+  h1 {
+    margin-top: 10px;
+    font-size: 2.5em;
+    animation: slideIn 2s ease-out;
+  }
+  .intro {
+    margin: 20px auto;
+    max-width: 600px;
+    font-size: 1.2em;
+    animation: fadeInUp 2s ease-out;
+  }
+  @keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Projects Grid */
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  .project {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 2s ease-out;
+  }
+  .project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  .project h2 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    animation: textBounce 3s infinite;
+  }
+  @keyframes textBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  .project a {
+    text-decoration: none;
+    color: #0f0;
+  }
+  .description {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #aaa;
+  }
+  
+  /* Rating Styles */
+  .rating {
+    margin-top: 5px;
+    font-size: 1.2em;
+    color: gold;
+  }
+  
+  /* Footer */
+  footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #181818;
+    font-size: 0.9em;
+    text-align: center;
+  }
+  footer a {
+    color: #0f0;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+  }
+  footer a:hover {
+    text-decoration: underline;
+    color: #fff;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <!-- Profile Image -->
-    <img src="Nuel.jpg" alt="Emmanuel Agafie" class="profile-image">
-    
-    <h1>Emmanuel Agafie</h1>
-    <p>B.Sc. in Applied Geophysics - Web Developer Portfolio</p>
 
-    <div class="project">
-      <h2 class="project-title"><span class="emoji">👉</span><a class="project-link" href="https://nozel-silva.github.io/skynet/" target="_blank">Project Skynet</a></h2>
-      <p class="project-description">Built 2 years ago. Skynet uses names to reveal information about people.</p>
-      <div class="star-rating">
-        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-      </div>
-    </div>
+<header>
+  <!-- Profile Photo -->
+  <img src="Nuel.jpg" alt="Profile Photo" class="profile">
+  <h1>Nuel_sama</h1>
+  <!-- Animated Catchy Introduction -->
+  <p class="intro">
+    Welcome to my portfolio! I'm Nuel_sama, a passionate developer exploring new ideas for fun. Check out my projects below!
+  </p>
+</header>
 
-    <div class="project">
-      <h2 class="project-title"><span class="emoji">👉</span><a class="project-link" href="https://nozel-silva.github.io/p.wave/index.html" target="_blank">Project P.Waves</a></h2>
-      <p class="project-description">Built a year ago for the 2018/19 Applied Geophysics students of the University of Benin.</p>
-      <div class="star-rating">
-        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-      </div>
-    </div>
-
-    <div class="project">
-      <h2 class="project-title"><span class="emoji">👉</span><a class="project-link" href="https://nozel-silva.github.io/Drop-game/" target="_blank">Drop Game</a></h2>
-      <p class="project-description">A play-to-earn game commonly used in airdrops.</p>
-      <div class="star-rating">
-        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
-      </div>
-    </div>
-
-    <div class="project">
-      <h2 class="project-title"><span class="emoji">👉</span><a class="project-link" href="https://nozel-silva.github.io/Reveal-/" target="_blank">Reveal</a></h2>
-      <p class="project-description">A play-to-earn game, which can be integrated into gambling sites.</p>
-      <div class="star-rating">
-        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-      </div>
-    </div>
-
-    <div class="project">
-      <h2 class="project-title"><span class="emoji">👉</span><a class="project-link" href="https://nozel-silva.github.io/Shooter/" target="_blank">Shooter</a></h2>
-      <p class="project-description">A play-to-earn and time-killing game.</p>
-      <div class="star-rating">
-        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-      </div>
-    </div>
-
-    <div class="project">
-      <h2 class="project-title"><span class="emoji">👉</span><a class="project-link" href="https://safegoals.xyz" target="_blank">Sports Prediction AI</a></h2>
-      <p class="project-description">The pinnacle of sports prediction AI.</p>
-      <div class="star-rating">
-        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-      </div>
-    </div>
-
-    <!-- Social Media Links -->
-    <div class="social-media">
-      <a href="https://www.google.com" target="_blank"><i class="fab fa-google"></i></a>
-      <a href="https://www.facebook.com/Emmanuel Agafie" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter/Nuel_sama✨"></i></a>
-      <a href="https://wa.me/2348035527091" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
+<!-- Projects Section -->
+<section class="projects">
+  <div class="project">
+    <h2><a href=" https://nozel-silva.github.io/Reveal-/" target="_blank">Reveal</a></h2>
+    <div class="rating">Rating: ★★★½☆</div>
+    <p class="description">A project focused on uncovering hidden insights in data. It leverages interactive UI and animations to enhance user experience.</p>
   </div>
+  
+  <div class="project">
+    <h2><a href=" https://nozel-silva.github.io/skynet/" target="_blank">Project Skynet</a></h2>
+    <div class="rating">Rating: ★★½☆☆</div>
+    <p class="description">An experimental project that explores AI-driven functionalities for automated systems.</p>
+  </div>
+  
+  <div class="project">
+    <h2><a href="https://nozel-silva.github.io/p.wave/index.html" target="_blank">P.waves</a></h2>
+    <div class="rating">Rating: ★★★★☆</div>
+    <p class="description">Built a year ago for the 2018/19 Applied Geophysics students of the University of Benin.</p>
+  </div>
+  
+  <div class="project">
+    <h2><a href=" https://nozel-silva.github.io/Drop-game/" target="_blank">Drop Game</a></h2>
+    <div class="rating">Rating: ★★★☆☆</div>
+    <p class="description">A fast-paced 2D game that challenges players with increasingly difficult levels.</p>
+  </div>
+  
+  <div class="project">
+    <h2><a href=" https://safegoals.xyz/" target="_blank">SafeGoals</a></h2>
+    <div class="rating">Rating: ★★★★★</div>
+    <p class="description">A project aimed at providing reliable predictions for sports enthusiasts, focusing on accuracy and user experience.</p>
+  </div>
+  
+  <div class="project">
+    <h2><a href="https://nozel-silva.github.io/JJK-Kubiten/" target="_blank">2Danime</a></h2>
+    <div class="rating">Rating: ★★★★☆</div>
+    <p class="description">A fun project exploring 2D anime game development with engaging animations and smooth gameplay.</p>
+  </div>
+</section>
+
+<!-- Footer with Contact Links -->
+<footer>
+  <p>Connect with me:</p>
+  <div style="margin-top: 10px;">
+    <a href="https://twitter.com/Nuel_sama" target="_blank">X (Twitter)</a> |
+    <a href="https://github.com/Nozel-silva/ " target="_blank">GitHub</a> |
+    <a href="https://www.linkedin.com/in/Emmnuel Agafie" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
 </body>
 </html>
