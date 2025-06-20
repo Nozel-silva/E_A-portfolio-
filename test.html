@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibrate Button</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #121212;
+    }
+    button {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: red;
+      color: white;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <button onclick="vibratePhone()">Buzz</button>
+
+  <script>
+    function vibratePhone() {
+      if ("vibrate" in navigator) {
+        navigator.vibrate(200); // Vibrate for 200 milliseconds
+      } else {
+        alert("Vibration not supported on this device.");
+      }
+    }
+  </script>
+</body>
+</html>
