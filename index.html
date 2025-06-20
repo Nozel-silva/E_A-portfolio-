@@ -1,179 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nuel_sama Portfolio</title>
-<style>
-  /* Global Styles */
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: #fff;
-    text-align: center;
-  }
-  header {
-    padding: 20px;
-  }
-  .profile {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid #0f0;
-    margin: 0 auto;
-    display: block;
-  }
-  h1 {
-    margin-top: 10px;
-    font-size: 2.5em;
-    animation: slideIn 2s ease-out;
-  }
-  .intro {
-    margin: 20px auto;
-    max-width: 600px;
-    font-size: 1.2em;
-    animation: fadeInUp 2s ease-out;
-  }
-  @keyframes slideIn {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-  @keyframes fadeInUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Profile – Nuel_sama</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
 
-  /* Projects Grid */
-  .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
-  .project {
-    background-color: #1e1e1e;
-    padding: 15px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeIn 2s ease-out;
-  }
-  .project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  }
-  .project h2 {
-    margin: 10px 0;
-    font-size: 1.5em;
-    animation: textBounce 3s infinite;
-  }
-  @keyframes textBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-  }
-  .project a {
-    text-decoration: none;
-    color: #0f0;
-  }
-  .description {
-    margin-top: 5px;
-    font-size: 0.9em;
-    color: #aaa;
-  }
-  
-  /* Rating Styles */
-  .rating {
-    margin-top: 5px;
-    font-size: 1.2em;
-    color: gold;
-  }
-  
-  /* Footer */
-  footer {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #181818;
-    font-size: 0.9em;
-    text-align: center;
-  }
-  footer a {
-    color: #0f0;
-    text-decoration: none;
-    margin: 0 15px;
-    transition: color 0.3s;
-  }
-  footer a:hover {
-    text-decoration: underline;
-    color: #fff;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-</style>
+    header {
+      background: #212121;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #bbb;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    section h2 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .achievement {
+      margin-bottom: 25px;
+    }
+
+    .achievement a {
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: bold;
+    }
+
+    .achievement a:hover {
+      text-decoration: underline;
+    }
+
+    .achievement p {
+      margin: 5px 0 0;
+      color: #555;
+    }
+
+    .media {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .media-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .media-item img,
+    .media-item video {
+      max-width: 100%;
+      border-radius: 6px;
+    }
+
+    footer {
+      background: #212121;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    footer a {
+      color: #00aaff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
 </head>
+
 <body>
+  <header>
+    <h1>Nuel_sama – Developer & Creator</h1>
+    <p>Driven by curiosity, powered by code. I build intelligent tools, immersive games, and digital experiments that work and wow.</p>
+  </header>
 
-<header>
-  <!-- Profile Photo -->
-  <img src="Nuel.jpg" alt="Profile Photo" class="profile">
-  <h1>Nuel_sama</h1>
-  <!-- Animated Catchy Introduction -->
-  <p class="intro">
-    Welcome to my portfolio! I'm Nuel_sama, a passionate developer exploring new ideas for fun. Check out my projects below!
-  </p>
-</header>
+  <main>
+    <section>
+      <h2>Notable Achievements</h2>
 
-<!-- Projects Section -->
-<section class="projects">
-  <div class="project">
-    <h2><a href=" https://nozel-silva.github.io/Reveal-/" target="_blank">Reveal</a></h2>
-    <div class="rating">Rating: ★★★½☆</div>
-    <p class="description">A project focused on uncovering hidden insights in data. It leverages interactive UI and animations to enhance user experience.</p>
-  </div>
-  
-  <div class="project">
-    <h2><a href="#" target="_blank">Project Skynet</a></h2>
-    <div class="rating">Rating: ★★½☆☆</div>
-    <p class="description">An experimental project that explores AI-driven functionalities for automated systems.</p>
-  </div>
-  
-  <div class="project">
-    <h2><a href="https://nozel-silva.github.io/p.wave/index.html" target="_blank">P.waves</a></h2>
-    <div class="rating">Rating: ★★★★☆</div>
-    <p class="description">Built a year ago for the 2018/19 Applied Geophysics students of the University of Benin.</p>
-  </div>
-  
-  <div class="project">
-    <h2><a href=" https://nozel-silva.github.io/Drop-game/" target="_blank">Drop Game</a></h2>
-    <div class="rating">Rating: ★★★☆☆</div>
-    <p class="description">A fast-paced 2D game that challenges players with increasingly difficult levels.</p>
-  </div>
-  
-  <div class="project">
-    <h2><a href=" https://safegoals.xyz/" target="_blank">SafeGoals</a></h2>
-    <div class="rating">Rating: ★★★★★</div>
-    <p class="description">A project aimed at providing reliable predictions for sports enthusiasts, focusing on accuracy and user experience.</p>
-  </div>
-  
-  <div class="project">
-    <h2><a href="https://nozel-silva.github.io/JJK-Kubiten/" target="_blank">2Danime</a></h2>
-    <div class="rating">Rating: ★★★★☆</div>
-    <p class="description">A fun project exploring 2D anime game development with engaging animations and smooth gameplay.</p>
-  </div>
-</section>
+      <div class="achievement">
+        <a href="https://safegoals.xyz/" target="_blank">SafeGoals</a>
+        <p>A high-accuracy football prediction engine that analyzes game data and delivers smart, verified insights before kickoff.</p>
+      </div>
 
-<!-- Footer with Contact Links -->
-<footer>
-  <p>Connect with me:</p>
-  <div style="margin-top: 10px;">
-    <a href="https://twitter.com/Nuel_sama" target="_blank">X (Twitter)</a> |
-    <a href="https://github.com/Nozel-silva/ " target="_blank">GitHub</a> |
-    <a href="https://www.linkedin.com/in/Emmnuel Agafie" target="_blank">LinkedIn</a>
-  </div>
-</footer>
+      <div class="achievement">
+        <a href="https://nozel-silva.github.io/Reveal-/" target="_blank">Reveal</a>
+        <p>A visual data intelligence project that transforms complex data into interactive insight for faster decision-making.</p>
+      </div>
 
+      <div class="achievement">
+        <a href="https://nozel-silva.github.io/JJK-Kubiten/" target="_blank">2Danime</a>
+        <p>Anime-inspired browser game mixing fast-paced action and smooth animation with custom character logic.</p>
+      </div>
+
+      <div class="achievement">
+        <a href="https://nozel-silva.github.io/Drop-game/" target="_blank">Drop Game</a>
+        <p>Simple and addictive reflex game where players dodge increasing speed drops — built for fun and testing motor skills.</p>
+      </div>
+
+      <div class="achievement">
+        <a href="https://nozel-silva.github.io/p.wave/index.html" target="_blank">P.waves</a>
+        <p>An educational tool created for geophysics students to simulate and visualize wave propagation concepts.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Media & Resources</h2>
+      <div class="media">
+        <div class="media-item">
+          <img src="Nuel.jpg" alt="Profile">
+          <p>Profile Image</p>
+        </div>
+       <!-- <div class="media-item">
+          <video controls>
+            <source src="demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p>Demo Clip</p>
+        </div>
+        <div class="media-item">
+          <img src="project-preview.png" alt="Preview">
+          <p>SafeGoals UI Preview</p>
+        </div>
+      </div>-->
+    </section>
+  </main>
+
+  <footer>
+    <p>Connect with me:</p>
+    <a href="https://twitter.com/Nuel_sama" target="_blank">X (Twitter)</a>
+    <a href="https://github.com/Nozel-silva" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/emmanuel-agafie" target="_blank">LinkedIn</a>
+  </footer>
 </body>
+
 </html>
