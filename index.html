@@ -2,104 +2,144 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Developer Profile – Nuel_sama</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuel_sama – Futuristic Developer Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
       margin: 0;
-      padding: 0;
-      color: #333;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #e0e0e0;
+      overflow-x: hidden;
     }
 
     header {
-      background: #212121;
-      color: #fff;
-      padding: 40px 20px;
       text-align: center;
+      padding: 60px 20px;
+      background: #000000cc;
+      backdrop-filter: blur(10px);
+      animation: fadeInDown 1s ease-out;
     }
 
     header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 20px;
       margin-bottom: 10px;
+      color: #00ffff;
     }
 
     header p {
-      font-size: 1.1em;
+      font-size: 12px;
+      color: #ccc;
       max-width: 600px;
       margin: 0 auto;
-      color: #bbb;
     }
 
     main {
       padding: 40px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeInUp 1s ease-in;
     }
 
     section {
-      margin-bottom: 60px;
+      margin-bottom: 50px;
     }
 
     section h2 {
-      font-size: 1.5em;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
+      font-size: 1.6em;
+      border-left: 5px solid #00ffff;
+      padding-left: 15px;
+      margin-bottom: 25px;
+      color: #00ffff;
     }
 
     .achievement {
-      margin-bottom: 25px;
+      background: #1a1a1a;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .achievement:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
     }
 
     .achievement a {
-      text-decoration: none;
-      color: #0077cc;
+      color: #00ffff;
       font-weight: bold;
-    }
-
-    .achievement a:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      font-size: 1.1em;
     }
 
     .achievement p {
-      margin: 5px 0 0;
-      color: #555;
+      color: #aaa;
+      margin-top: 5px;
     }
 
     .media {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 20px;
     }
 
     .media-item {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 10px;
+      flex: 1 1 200px;
+      background: #222;
+      padding: 15px;
       text-align: center;
+      border-radius: 10px;
     }
 
-    .media-item img,
-    .media-item video {
-      max-width: 100%;
-      border-radius: 6px;
+    .media-item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .media-item p {
+      margin-top: 10px;
+      color: #ccc;
     }
 
     footer {
-      background: #212121;
-      color: #ccc;
+      background: #000000cc;
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
+      color: #999;
+      border-top: 1px solid #333;
     }
 
     footer a {
-      color: #00aaff;
+      color: #00ffff;
       text-decoration: none;
       margin: 0 10px;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -113,69 +153,25 @@
   <main>
     <section>
       <h2>Notable Achievements</h2>
-
-<div class="achievement">
-        <a href=" https://leading-edge-virtual-insight.vercel.app/" target="_blank">L.E.V.I</a>
-        <p>A Technologically driven startup focused on solving certain problems </p>
-      
-      <div class="achievement">
-        <a href="https://safegoals.xyz/" target="_blank">SafeGoals</a>
-        <p>A high-accuracy football prediction engine that analyzes game data and delivers smart, verified insights before kickoff.</p>
-      </div>
-
-      <div class="achievement">
-        <a href="https://nozel-silva.github.io/Reveal-/" target="_blank">Reveal</a>
-        <p>A web based recreation activity for faster decision-making in bets or card games.</p>
-      </div>
-
-      <div class="achievement">
-        <a href="https://linkmart.vercel.app/" target="_blank">Linkmart</a>
-        <p>The parallel version of Open sea (Closed Sea) where users can list or buy links or text based items .</p>
-      </div>
-
-<div class="achievement">
-        <a href=" https://image-upscale-omega.vercel.app/" target="_blank">Image upscale</a>
-        <p>An image upscaler that tirns low quality images into HD</p>
-</div>
-      <div class="achievement">
-        <a href="https://nozel-silva.github.io/JJK-Kubiten/" target="_blank">JJK game</a>
-        <p>Anime-inspired browser game mixing fast-paced action and smooth animation with custom character logic.</p>
-      </div>
-     <div class="achievement">
-        <a href=" https://nozel-silva.github.io/Different-/" target="_blank">Prism realm</a>
-        <p> A 3D gallery display design for items.</p>
-     </div>
-
-      <div class="achievement">
-        <a href="https://nozel-silva.github.io/Drop-game/" target="_blank">Drop Game</a>
-        <p>Simple and addictive reflex game where players hit projectiles, built for fun and testing motor skills.</p>
-      </div>
-
-      <div class="achievement">
-        <a href="https://nozel-silva.github.io/p.wave/index.html" target="_blank">P.waves</a>
-        <p>An educational tool created for geophysics students to simulate and visualize wave propagation concepts.</p>
-      </div>
+      <div class="achievement"><a href="https://leading-edge-virtual-insight.vercel.app/" target="_blank">L.E.V.I</a><p>A technologically driven startup focused on solving real problems.</p></div>
+      <div class="achievement"><a href="https://safegoals.xyz/" target="_blank">SafeGoals</a><p>High-accuracy football prediction engine with smart, verified insights.</p></div>
+      <div class="achievement"><a href="https://nozel-silva.github.io/Reveal-/" target="_blank">Reveal</a><p>Decision-making game for bettors and card players.</p></div>
+      <div class="achievement"><a href="https://linkmart.vercel.app/" target="_blank">Linkmart</a><p>Web3-inspired platform for buying/selling link-based assets.</p></div>
+      <div class="achievement"><a href="https://image-upscale-omega.vercel.app/" target="_blank">Image Upscale</a><p>Turns low-quality images into HD using AI.</p></div>
+      <div class="achievement"><a href="https://nozel-silva.github.io/JJK-Kubiten/" target="_blank">JJK Game</a><p>Anime-inspired action game with custom mechanics.</p></div>
+      <div class="achievement"><a href="https://nozel-silva.github.io/Different-/" target="_blank">Prism Realm</a><p>Immersive 3D gallery showcase.</p></div>
+      <div class="achievement"><a href="https://nozel-silva.github.io/Drop-game/" target="_blank">Drop Game</a><p>Fast-paced reflex tester game.</p></div>
+      <div class="achievement"><a href="https://nozel-silva.github.io/p.wave/index.html" target="_blank">P.waves</a><p>Educational wave simulation tool for geophysics students.</p></div>
     </section>
 
     <section>
       <h2>Media & Resources</h2>
       <div class="media">
         <div class="media-item">
-          <img src="Nuel.jpg" alt="Profile">
+          <img src="Nuel.jpg" alt="Profile" />
           <p>Emmanuel Agafie</p>
         </div>
-       <!-- <div class="media-item">
-          <video controls>
-            <source src="demo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <p>Demo Clip</p>
-        </div>
-        <div class="media-item">
-          <img src="project-preview.png" alt="Preview">
-          <p>SafeGoals UI Preview</p>
-        </div>
-      </div>-->
+      </div>
     </section>
   </main>
 
