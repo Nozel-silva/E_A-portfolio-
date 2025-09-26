@@ -15,9 +15,56 @@
       overflow-x: hidden;
     }
 
+    /* ===== Image Slider Styles ===== */
+    .slider-container {
+      perspective: 1200px;
+      width: 200px;
+      height: 200px;
+      margin: 40px auto;
+      position: relative;
+    }
+
+    .slider {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      animation: rotate 12s infinite linear;
+    }
+
+    .slider img {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .slider img:nth-child(1) {
+      transform: rotateY(0deg) translateZ(300px);
+    }
+
+    .slider img:nth-child(2) {
+      transform: rotateY(120deg) translateZ(300px);
+    }
+
+    .slider img:nth-child(3) {
+      transform: rotateY(240deg) translateZ(300px);
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(360deg);
+      }
+    }
+
     header {
       text-align: center;
-      padding: 60px 20px;
+      padding: 60px 20px 30px;
       background: #000000cc;
       backdrop-filter: blur(10px);
       animation: fadeInDown 1s ease-out;
@@ -81,30 +128,6 @@
       margin-top: 5px;
     }
 
-    .media {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .media-item {
-      flex: 1 1 200px;
-      background: #222;
-      padding: 15px;
-      text-align: center;
-      border-radius: 10px;
-    }
-
-    .media-item img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .media-item p {
-      margin-top: 10px;
-      color: #ccc;
-    }
-
     footer {
       background: #000000cc;
       text-align: center;
@@ -145,6 +168,15 @@
 </head>
 
 <body>
+  <!-- 3D Image Slider -->
+  <div class="slider-container">
+    <div class="slider">
+      <img src="Nuel.jpg" alt="Profile Image 1" />
+      <img src="Nuel.jpg" alt="Profile Image 2" />
+      <img src="Nuel.jpg" alt="Profile Image 3" />
+    </div>
+  </div>
+
   <header>
     <h1>Nuel_sama – Developer & Creator</h1>
     <p>Driven by curiosity, powered by code. I build intelligent tools, immersive games, and digital experiments that work and wow.</p>
@@ -153,23 +185,41 @@
   <main>
     <section>
       <h2>Notable Achievements</h2>
-      <div class="achievement"><a href="https://leading-edge-virtual-insight.vercel.app/" target="_blank">L.E.V.I</a><p>A technologically driven startup focused on solving real problems.</p></div>
-      <div class="achievement"><a href="https://safegoals.xyz/" target="_blank">SafeGoals</a><p>High-accuracy football prediction engine with smart, verified insights.</p></div>
-      <div class="achievement"><a href="https://nozel-silva.github.io/Reveal-/" target="_blank">Reveal</a><p>Decision-making game for bettors and card players.</p></div>
-      <div class="achievement"><a href="https://linkmart.vercel.app/" target="_blank">Linkmart</a><p>Web3-inspired platform for buying/selling link-based assets.</p></div>
-      <div class="achievement"><a href="https://image-upscale-omega.vercel.app/" target="_blank">Image Upscale</a><p>Turns low-quality images into HD using AI.</p></div>
-      <div class="achievement"><a href="https://nozel-silva.github.io/JJK-Kubiten/" target="_blank">JJK Game</a><p>Anime-inspired action game with custom mechanics.</p></div>
-      <div class="achievement"><a href="https://nozel-silva.github.io/Different-/" target="_blank">Prism Realm</a><p>Immersive 3D gallery showcase.</p></div>
-      <div class="achievement"><a href="https://nozel-silva.github.io/Drop-game/" target="_blank">Drop Game</a><p>Fast-paced reflex tester game.</p></div>
-      <div class="achievement"><a href="https://nozel-silva.github.io/p.wave/index.html" target="_blank">P.waves</a><p>Educational wave simulation tool for geophysics students.</p></div>
+      <div class="achievement"><a href="https://leading-edge-virtual-insight.vercel.app/" target="_blank">L.E.V.I</a>
+        <p>A technologically driven startup focused on solving real problems.</p>
+      </div>
+      <div class="achievement"><a href="https://safegoals.xyz/" target="_blank">SafeGoals</a>
+        <p>High-accuracy football prediction engine with smart, verified insights.</p>
+      </div>
+      <div class="achievement"><a href="https://nozel-silva.github.io/Reveal-/" target="_blank">Reveal</a>
+        <p>Decision-making game for bettors and card players.</p>
+      </div>
+      <div class="achievement"><a href="https://linkmart.vercel.app/" target="_blank">Linkmart</a>
+        <p>Web3-inspired platform for buying/selling link-based assets.</p>
+      </div>
+      <div class="achievement"><a href="https://image-upscale-omega.vercel.app/" target="_blank">Image Upscale</a>
+        <p>Turns low-quality images into HD using AI.</p>
+      </div>
+      <div class="achievement"><a href="https://nozel-silva.github.io/JJK-Kubiten/" target="_blank">JJK Game</a>
+        <p>Anime-inspired action game with custom mechanics.</p>
+      </div>
+      <div class="achievement"><a href="https://nozel-silva.github.io/Different-/" target="_blank">Prism Realm</a>
+        <p>Immersive 3D gallery showcase.</p>
+      </div>
+      <div class="achievement"><a href="https://nozel-silva.github.io/Drop-game/" target="_blank">Drop Game</a>
+        <p>Fast-paced reflex tester game.</p>
+      </div>
+      <div class="achievement"><a href="https://nozel-silva.github.io/p.wave/index.html" target="_blank">P.waves</a>
+        <p>Educational wave simulation tool for geophysics students.</p>
+      </div>
     </section>
 
     <section>
       <h2>Media & Resources</h2>
       <div class="media">
+        <!-- Removed old static image (moved to slider above) -->
         <div class="media-item">
-          <img src="Nuel.jpg" alt="Profile" />
-          <p>Emmanuel Agafie</p>
+          <p>Rotating image slider added above 👆</p>
         </div>
       </div>
     </section>
