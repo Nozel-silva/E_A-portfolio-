@@ -1,179 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nuel_sama – Futuristic Developer Profile</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <title>Nuel_sama – Futuristic Developer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      background: radial-gradient(circle at top, #08131a 0%, #010a0e 100%);
       color: #e0e0e0;
       overflow-x: hidden;
-    }
-
-    /* ===== Image Slider Styles ===== */
-    .slider-container {
-      perspective: 1200px;
-      width: 200px;
-      height: 200px;
-      margin: 40px auto;
       position: relative;
+      min-height: 100vh;
     }
 
-    .slider {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      transform-style: preserve-3d;
-      animation: rotate 12s infinite linear;
+    /* ==== Floating Particles ==== */
+    .particle {
+      position: fixed;
+      width: 6px; height: 6px;
+      background: rgba(0,255,255,0.5);
+      border-radius: 50%;
+      animation: float 15s infinite linear;
+      pointer-events: none;
+      z-index: 0;
     }
 
-    .slider img {
-      position: absolute;
-      width: 300px;
-      height: 200px;
-      border-radius: 12px;
-      object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0.4; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
     }
 
-    .slider img:nth-child(1) {
-      transform: rotateY(0deg) translateZ(300px);
-    }
-
-    .slider img:nth-child(2) {
-      transform: rotateY(120deg) translateZ(300px);
-    }
-
-    .slider img:nth-child(3) {
-      transform: rotateY(240deg) translateZ(300px);
-    }
-
-    @keyframes rotate {
-      from {
-        transform: rotateY(0deg);
-      }
-      to {
-        transform: rotateY(360deg);
-      }
-    }
-
+    /* ==== Header ==== */
     header {
       text-align: center;
-      padding: 60px 20px 30px;
-      background: #000000cc;
+      padding: 100px 20px 60px;
+      position: relative;
+      background: rgba(0,0,0,0.65);
+      border-bottom: 1px solid rgba(0,255,255,0.2);
       backdrop-filter: blur(10px);
-      animation: fadeInDown 1s ease-out;
+      z-index: 2;
     }
 
     header h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 20px;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
       color: #00ffff;
+      text-shadow: 0 0 15px #00ffff;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 8px #00ffff; }
+      to { text-shadow: 0 0 24px #00ffff; }
     }
 
     header p {
-      font-size: 12px;
-      color: #ccc;
-      max-width: 600px;
-      margin: 0 auto;
+      margin-top: 14px;
+      font-size: 1rem;
+      color: #bbb;
+      max-width: 700px;
+      margin-inline: auto;
+      line-height: 1.5em;
     }
 
+    /* ==== 3D Gallery ==== */
+    .gallery-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 350px;
+      perspective: 1000px;
+      margin: 30px auto;
+    }
+
+    .gallery {
+      width: 320px;
+      height: 200px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: spin 14s infinite linear;
+    }
+
+    .gallery img {
+      position: absolute;
+      width: 320px;
+      height: 200px;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 0 30px rgba(0,255,255,0.25);
+      border: 1px solid rgba(0,255,255,0.3);
+    }
+
+    .gallery img:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
+    .gallery img:nth-child(2) { transform: rotateY(120deg) translateZ(400px); }
+    .gallery img:nth-child(3) { transform: rotateY(240deg) translateZ(400px); }
+
+    @keyframes spin {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
+    }
+
+    /* ==== Main ==== */
     main {
-      padding: 40px 20px;
       max-width: 1100px;
-      margin: auto;
-      animation: fadeInUp 1s ease-in;
+      margin: 60px auto;
+      padding: 0 20px;
+      z-index: 2;
+      position: relative;
     }
 
-    section {
-      margin-bottom: 50px;
-    }
+    section { margin-bottom: 80px; opacity: 0; transform: translateY(30px); transition: all 1s ease; }
+    section.visible { opacity: 1; transform: translateY(0); }
 
     section h2 {
-      font-size: 1.6em;
-      border-left: 5px solid #00ffff;
-      padding-left: 15px;
-      margin-bottom: 25px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8em;
       color: #00ffff;
+      border-left: 5px solid #00ffff;
+      padding-left: 12px;
+      margin-bottom: 25px;
+      text-shadow: 0 0 10px #00ffff;
     }
 
+    /* ==== Achievements ==== */
     .achievement {
-      background: #1a1a1a;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      background: rgba(20,30,40,0.9);
+      padding: 20px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,255,255,0.15);
+      transition: transform 0.4s, box-shadow 0.4s;
     }
 
     .achievement:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 0 25px rgba(0,255,255,0.3);
     }
 
     .achievement a {
       color: #00ffff;
-      font-weight: bold;
-      text-decoration: none;
+      font-weight: 600;
       font-size: 1.1em;
+      text-decoration: none;
     }
 
     .achievement p {
+      margin-top: 6px;
       color: #aaa;
-      margin-top: 5px;
+      font-size: 0.95em;
     }
 
-    footer {
-      background: #000000cc;
+    /* ==== Tech Stack ==== */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      margin-top: 30px;
+    }
+
+    .tech {
       text-align: center;
-      padding: 20px;
+      position: relative;
+      animation: floatIcon 3s ease-in-out infinite;
+    }
+
+    .tech img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(0,255,255,0.5));
+      transition: transform 0.4s;
+    }
+
+    .tech:hover img {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    .tech span {
+      display: block;
+      margin-top: 8px;
+      color: #00ffff;
       font-size: 0.9em;
-      color: #999;
-      border-top: 1px solid #333;
+      text-shadow: 0 0 8px #00ffff;
+    }
+
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* ==== Footer ==== */
+    footer {
+      background: rgba(0,0,0,0.85);
+      padding: 40px 10px;
+      text-align: center;
+      border-top: 1px solid rgba(0,255,255,0.2);
+    }
+
+    footer p {
+      margin-bottom: 10px;
+      font-size: 1em;
+      color: #ccc;
     }
 
     footer a {
       color: #00ffff;
       text-decoration: none;
-      margin: 0 10px;
+      margin: 0 12px;
+      font-weight: 500;
+      transition: color 0.3s, text-shadow 0.3s;
     }
 
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    footer a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #00ffff;
     }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
+    /* ==== Responsive ==== */
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.8rem; }
+      .gallery img {
+        width: 240px; height: 150px;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      .gallery { width: 240px; height: 150px; }
+      .gallery img:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
+      .gallery img:nth-child(2) { transform: rotateY(120deg) translateZ(300px); }
+      .gallery img:nth-child(3) { transform: rotateY(240deg) translateZ(300px); }
     }
   </style>
 </head>
 
 <body>
-  <!-- 3D Image Slider -->
-  <div class="slider-container">
-    <div class="slider">
-      <img src="Nuel.jpg" alt="Profile Image 1" />
-      <img src="R.jpg" alt="Profile Image 2" />
-      <img src="P.jpg" alt="Profile Image 3" />
+  <!-- Floating Particles Background -->
+  <script>
+    for(let i=0;i<40;i++){
+      const particle=document.createElement('div');
+      particle.className='particle';
+      particle.style.left=Math.random()*100+'vw';
+      particle.style.animationDelay=(Math.random()*10)+'s';
+      document.body.appendChild(particle);
+    }
+  </script>
+
+  <!-- 3D Gallery -->
+  <div class="gallery-container">
+    <div class="gallery">
+      <img src="Nuel.jpg" alt="Profile 1"/>
+      <img src="R.jpg" alt="Profile 2"/>
+      <img src="P.jpg" alt="Profile 3"/>
     </div>
   </div>
 
@@ -185,44 +264,34 @@
   <main>
     <section>
       <h2>Notable Achievements</h2>
-      <div class="achievement"><a href="#"target="_blank">L.E.V.I</a>
-        <p>A technologically driven startup focused on solving real problems.</p>
-      </div>
-      <div class="achievement"><a href=" https://safe-goals-iig4.vercel.app/data.html?" target="_blank">SafeGoals</a>
-        <p>High-accuracy football prediction engine with smart, verified insights.</p>
-      </div>
-      
-      <div class="achievement"><a href="https://linkmart.vercel.app/" target="_blank">Linkmart</a>
-        <p>Web3-inspired platform for buying/selling link-based assets.</p>
-      </div>
-      <div class="achievement"><a href="https://image-upscale-omega.vercel.app/" target="_blank">Image Upscale</a>
-        <p>Turns low-quality images into HD using AI.</p>
-      </div>
-      <div class="achievement"><a href="https://nozel-silva.github.io/Reveal-/" target="_blank">Reveal</a>
-        <p>Decision-making game for bettors and card players.</p>
-      </div>
-      <div class="achievement"><a href="https://nozel-silva.github.io/JJK-Kubiten/" target="_blank">JJK Game</a>
-        <p>Anime-inspired action game with custom mechanics.</p>
-      </div>
-      <div class="achievement"><a href="https://nozel-silva.github.io/Different-/" target="_blank">Prism Realm</a>
-        <p>Immersive 3D gallery showcase.</p>
-      </div>
-      <div class="achievement"><a href="https://nozel-silva.github.io/Drop-game/" target="_blank">Drop Game</a>
-        <p>Fast-paced reflex tester game.</p>
-      </div>
-      <div class="achievement"><a href="https://nozel-silva.github.io/p.wave/index.html" target="_blank">P.waves</a>
-        <p>Educational wave simulation tool for geophysics students.</p>
+      <div class="achievement"><a href="#">L.E.V.I</a><p>A technologically driven startup focused on solving real problems.</p></div>
+      <div class="achievement"><a href="https://safe-goals-iig4.vercel.app/data.html?" target="_blank">SafeGoals</a><p>High-accuracy football prediction engine with smart, verified insights.</p></div>
+      <div class="achievement"><a href="https://linkmart.vercel.app/" target="_blank">Linkmart</a><p>Web3-inspired platform for buying/selling link-based assets.</p></div>
+      <div class="achievement"><a href="https://image-upscale-omega.vercel.app/" target="_blank">Image Upscale</a><p>Turns low-quality images into HD using AI.</p></div>
+      <div class="achievement"><a href="https://nozel-silva.github.io/Reveal-/" target="_blank">Reveal</a><p>Decision-making game for bettors and card players.</p></div>
+      <div class="achievement"><a href="https://nozel-silva.github.io/JJK-Kubiten/" target="_blank">JJK Game</a><p>Anime-inspired action game with custom mechanics.</p></div>
+      <div class="achievement"><a href="https://nozel-silva.github.io/Different-/" target="_blank">Prism Realm</a><p>Immersive 3D gallery showcase.</p></div>
+      <div class="achievement"><a href="https://nozel-silva.github.io/Drop-game/" target="_blank">Drop Game</a><p>Fast-paced reflex tester game.</p></div>
+      <div class="achievement"><a href="https://nozel-silva.github.io/p.wave/index.html" target="_blank">P.waves</a><p>Educational wave simulation tool for geophysics students.</p></div>
+    </section>
+
+    <section>
+      <h2>Tech Stack</h2>
+      <div class="tech-grid">
+        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/><span>Python</span></div>
+        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"/><span>JavaScript</span></div>
+        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"/><span>React</span></div>
+        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"/><span>Node.js</span></div>
+        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"/><span>PHP</span></div>
+        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Solidity"/><span>Solidity</span></div>
+        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite"/><span>SQLite</span></div>
       </div>
     </section>
 
     <section>
       <h2>Media & Resources</h2>
-      <div class="media">
-        <!-- Removed old static image (moved to slider above) -->
-        <div class="media-item">
-          <p>Rotating image slider added above 👆</p>
-        </div>
-      </div>
+      <p>Whatsapp:+2348035527091</p>
+      <p>X:@Nostalgic_Nuel</p>
     </section>
   </main>
 
@@ -232,6 +301,16 @@
     <a href="https://github.com/Nozel-silva" target="_blank">GitHub</a>
     <a href="https://www.linkedin.com/in/emmanuel-agafie" target="_blank">LinkedIn</a>
   </footer>
-</body>
 
+  <!-- Scroll Reveal Script -->
+  <script>
+    const sections=document.querySelectorAll('section');
+    const reveal=()=>{ sections.forEach(sec=>{
+      const top=sec.getBoundingClientRect().top;
+      if(top<window.innerHeight-150){ sec.classList.add('visible'); }
+    }); };
+    window.addEventListener('scroll',reveal);
+    reveal();
+  </script>
+</body>
 </html>
