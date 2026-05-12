@@ -6,374 +6,227 @@
   <title>Nuel_sama🍀 • Futuristic Builder & Innovator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #f8fafc; /* Bright, clean light background */
-      --accent: #0ea5e9; /* Vibrant sky blue for dope accents */
-      --accent-glow: rgba(14, 165, 233, 0.3); /* Subtle glow */
-      --text: #0f172a; /* Sharp dark text */
-      --text-dim: #475569; /* Muted gray for subtitles */
-      --card: #ffffff; /* Clean white cards */
-      --glass: rgba(255, 255, 255, 0.8); /* Light glass effect */
-      --border: rgba(14, 165, 233, 0.15); /* Soft border */
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Sharp, professional shadows */
-    }
-
-    * { margin:0; padding:0; box-sizing:border-box; }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      overflow-x: hidden;
-      line-height: 1.7;
-    }
-
-    header {
-      position: relative;
-      text-align: center;
-      padding: 8rem 1.5rem 6rem;
-      z-index: 2;
-      background: linear-gradient(to bottom, rgba(14, 165, 233, 0.05), transparent); /* Subtle bright gradient */
-    }
-
-    .hero-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(3rem, 8vw, 5.5rem);
-      font-weight: 700;
-      color: var(--accent);
-      text-shadow: 0 2px 8px var(--accent-glow);
-      margin-bottom: 1rem;
-      letter-spacing: -0.5px;
-    }
-
-    .hero-subtitle {
-      font-size: 1.3rem;
-      max-width: 720px;
-      margin: 0 auto 2rem;
-      color: var(--text-dim);
-      font-weight: 400;
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      gap: 1.2rem;
-      margin-top: 1rem;
-    }
-
-    .btn {
-      padding: 0.8rem 2rem;
-      border-radius: 9999px; /* Sharper pill shape */
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow);
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px var(--accent-glow);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      background: var(--accent);
-      color: white;
-      box-shadow: 0 6px 25px var(--accent-glow);
-    }
-
-    /* Featured showcase grid */
-    .showcase {
-      max-width: 1200px;
-      margin: 0 auto 6rem;
-      padding: 0 1.5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow);
-      position: relative;
-    }
-
-    .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-      border-color: var(--accent);
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .project-info {
-      padding: 1.5rem;
-    }
-
-    .project-title {
-      font-size: 1.3rem;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    .project-desc {
-      color: var(--text-dim);
-      font-size: 0.95rem;
-    }
-
-    section {
-      max-width: 1100px;
-      margin: 0 auto 8rem;
-      padding: 0 1.5rem;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.2rem;
-      color: var(--text);
-      margin-bottom: 2rem;
-      text-align: center;
-      letter-spacing: 0.5px;
-    }
-
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      justify-content: center;
-    }
-
-    .tech-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
-      background: rgba(255,255,255,0.5);
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow);
-    }
-
-    .tech-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-    }
-
-    .tech-item img {
-      width: 50px;
-      height: 50px;
-      transition: transform 0.3s;
-    }
-
-    .tech-item:hover img {
-      transform: scale(1.1);
-    }
-
-    .tech-item span {
-      margin-top: 0.7rem;
-      color: var(--text);
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .contact {
-      text-align: center;
-      background: rgba(14,165,233,0.03);
-      padding: 3rem;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-    }
-
-    .contact p {
-      font-size: 1.1rem;
-      margin: 0.8rem 0;
-      color: var(--text-dim);
-    }
-
-    .contact a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: all 0.3s;
-      font-weight: 500;
-    }
-
-    .contact a:hover {
-      color: #0369a1; /* Darker shade for sharpness */
-    }
-
-    footer {
-      text-align: center;
-      padding: 3rem 1rem;
-      border-top: 1px solid var(--border);
-      color: var(--text-dim);
-    }
-
-    footer a {
-      color: var(--accent);
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    footer a:hover {
-      color: #0369a1;
-    }
-
-    @media (max-width: 768px) {
-      header { padding: 6rem 1rem 4rem; }
-      .hero-title { font-size: 2.8rem; }
-      .showcase { grid-template-columns: 1fr; gap: 1.2rem; }
-      .tech-stack { gap: 1rem; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Bricolage+Grotesque:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- your CSS file here -->
 </head>
 <body>
 
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="navbar">
+    <a href="#" class="nav-logo">NUEL_SAMA🍀</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://github.com/Nozel-silva" target="_blank">GitHub ↗</a></li>
+    </ul>
+  </nav>
+
   <header>
-    <h1 class="hero-title">Nuel_sama🍀</h1>
+    <div class="header-orb orb-1"></div>
+    <div class="header-orb orb-2"></div>
+    <div class="header-orb orb-3"></div>
+    <p class="hero-eyebrow">Builder & Innovator</p>
+    <h1 class="hero-title">
+      <span class="line-1">Nuel_sama</span>
+      <span class="line-2">🍀</span>
+    </h1>
     <p class="hero-subtitle">Building tomorrow's tools today — AI, Web3, games, predictions & immersive digital experiences.</p>
-    
     <div class="hero-cta">
       <a href="https://github.com/Nozel-silva" target="_blank" class="btn btn-primary">View GitHub</a>
       <a href="https://x.com/Nostalgic_Nuel" target="_blank" class="btn btn-outline">Reach out on X</a>
     </div>
+    <div class="scroll-indicator">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
   </header>
 
-  <section class="showcase">
+  <div id="projects" class="section-wrapper">
+    <p class="section-label" data-observe>Featured Work</p>
+    <h2 class="section-title" data-observe>What I've Built</h2>
 
-<div class="project-card">
-      <img src="https://media.easy-peasy.ai/efd63bac-3c5b-4279-8081-67ebeea230aa/2024-12-18T04:18:05.817Z.png" alt="Neon tech workspace representing Web3 innovation" loading="lazy">
-      <div class="project-info">
-        <h3 class="project-title"><a href="https://linkmart.vercel.app/" target="_blank">Linkmart</a></h3>
-        <p class="project-desc">Next-gen marketplace for trading link-based digital assets in a Web3-inspired environment.</p>
+    <div class="featured-project" data-observe>
+      <div class="featured-visual">
+        <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=900&q=80" alt="All for One">
+        <div class="featured-badge">Featured Project</div>
       </div>
-</div>
-
-
-
-    
-  
-    <div class="project-card">
-      <img src="https://p1.hippopx.com/preview/278/286/333/science-no-person-biology-medicine.jpg" alt="Abstract decision matrix game concept" loading="lazy">
-      <div class="project-info">
-        <h3 class="project-title"><a href=" https://nozel-silva.github.io/p.wave/" target="_blank">P.waves</a></h3>
-        <p class="project-desc">A school website for passing out stufents and logs for downloading previous school materials</p>
-      </div>
-    </div>
-
-
-    
-
-    <div class="project-card">
-      <img src="https://images.pexels.com/photos/6804604/pexels-photo-6804604.jpeg" alt="Developer working on predictive systems" loading="lazy">
-      <div class="project-info">
-        <h3 class="project-title"><a href="https://safe-goals-iig4.vercel.app" target="_blank">SafeGoals</a></h3>
-        <p class="project-desc">High-precision football prediction engine powered by verified data & smart analytics.</p>
+      <div class="featured-content">
+        <div class="featured-number">01</div>
+        <p class="featured-tag">// Tool · Social Media</p>
+        <h3 class="featured-title">All for One</h3>
+        <p class="featured-desc">Download videos from Twitter and Instagram with one click. Clean UI, fast processing — no signups, no friction. Just paste the link and go.</p>
+        <a href="https://all-for-one-pearl.vercel.app/" target="_blank" class="featured-link">
+          Visit Live Site
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
     </div>
 
+    <div class="projects-grid">
 
-
-<div class="project-card">
-      <img src="https://p3.hippopx.com/preview/225/884/black-flat-screen-monitor-dual-monitor-setup-contemporary-office-desk-stylish-lighting-tech-enthusiasts-computer-monitor-office-workspace-modern-desk-setup-dual-display-tech.jpg" alt="Anime-inspired game development setup" loading="lazy">
-      <div class="project-info">
-        <h3 class="project-title"><a href="https://nozel-silva.github.io/JJK-Kubiten/" target="_blank">JJK Game</a></h3>
-        <p class="project-desc">High-energy anime-style action game with original combat mechanics.</p>
+      <div class="project-card" data-observe>
+        <div class="card-img">
+          <img src="https://media.easy-peasy.ai/efd63bac-3c5b-4279-8081-67ebeea230aa/2024-12-18T04:18:05.817Z.png" alt="Linkmart" loading="lazy">
+          <span class="card-num">02</span>
+        </div>
+        <div class="card-body">
+          <p class="card-label">// Web3 · Marketplace</p>
+          <h3 class="card-title"><a href="https://linkmart.vercel.app/" target="_blank">Linkmart</a></h3>
+          <p class="card-desc">Next-gen marketplace for trading link-based digital assets in a Web3-inspired environment.</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://linkmart.vercel.app/" target="_blank" class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
       </div>
-</div>
-    
-  
-    
-   <div class="project-card">
-      <img src="https://p3.hippopx.com/preview/225/884/black-flat-screen-monitor-dual-monitor-setup-contemporary-office-desk-stylish-lighting-tech-enthusiasts-computer-monitor-office-workspace-modern-desk-setup-dual-display-tech.jpg" alt="Anime-inspired game development setup" loading="lazy">
-      <div class="project-info">
-        <h3 class="project-title"><a href="https://the-one-piece-avji.vercel.app/" target="_blank">The one piece</a></h3>
-        <p class="project-desc">High-energy anime-style bounty generator with original layout</p>
+
+      <div class="project-card" data-observe>
+        <div class="card-img">
+          <img src="https://p1.hippopx.com/preview/278/286/333/science-no-person-biology-medicine.jpg" alt="P.waves" loading="lazy">
+          <span class="card-num">03</span>
+        </div>
+        <div class="card-body">
+          <p class="card-label">// Education · Web</p>
+          <h3 class="card-title"><a href="https://nozel-silva.github.io/p.wave/" target="_blank">P.waves</a></h3>
+          <p class="card-desc">A school platform for passing-out students with resource logs and downloadable school materials.</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://nozel-silva.github.io/p.wave/" target="_blank" class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
       </div>
-   </div>
 
+      <div class="project-card" data-observe>
+        <div class="card-img">
+          <img src="https://images.pexels.com/photos/6804604/pexels-photo-6804604.jpeg" alt="SafeGoals" loading="lazy">
+          <span class="card-num">04</span>
+        </div>
+        <div class="card-body">
+          <p class="card-label">// AI · Sports Analytics</p>
+          <h3 class="card-title"><a href="https://safe-goals-iig4.vercel.app" target="_blank">SafeGoals</a></h3>
+          <p class="card-desc">High-precision football prediction engine powered by verified data & smart analytics.</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://safe-goals-iig4.vercel.app" target="_blank" class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
 
+      <div class="project-card" data-observe>
+        <div class="card-img">
+          <img src="https://p3.hippopx.com/preview/225/884/black-flat-screen-monitor-dual-monitor-setup-contemporary-office-desk-stylish-lighting-tech-enthusiasts-computer-monitor-office-workspace-modern-desk-setup-dual-display-tech.jpg" alt="JJK Game" loading="lazy">
+          <span class="card-num">05</span>
+        </div>
+        <div class="card-body">
+          <p class="card-label">// Game · Anime</p>
+          <h3 class="card-title"><a href="https://nozel-silva.github.io/JJK-Kubiten/" target="_blank">JJK Game</a></h3>
+          <p class="card-desc">High-energy anime-style action game with original combat mechanics and immersive gameplay.</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://nozel-silva.github.io/JJK-Kubiten/" target="_blank" class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
 
-    
-    <div class="project-card">
-      <img src="https://p1.hippopx.com/preview/278/286/333/science-no-person-biology-medicine.jpg" alt="Abstract decision matrix game concept" loading="lazy">
-      <div class="project-info">
-        <h3 class="project-title"><a href="https://nozel-silva.github.io/Reveal-/" target="_blank">Reveal</a></h3>
-        <p class="project-desc">Strategic decision-making game built for bettors, card players & risk takers.</p>
+      <div class="project-card" data-observe>
+        <div class="card-img">
+          <img src="https://p3.hippopx.com/preview/225/884/black-flat-screen-monitor-dual-monitor-setup-contemporary-office-desk-stylish-lighting-tech-enthusiasts-computer-monitor-office-workspace-modern-desk-setup-dual-display-tech.jpg" alt="The One Piece" loading="lazy">
+          <span class="card-num">06</span>
+        </div>
+        <div class="card-body">
+          <p class="card-label">// Game · Anime</p>
+          <h3 class="card-title"><a href="https://the-one-piece-avji.vercel.app/" target="_blank">The One Piece</a></h3>
+          <p class="card-desc">Anime-style bounty generator with an original cinematic layout and sharp visual identity.</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://the-one-piece-avji.vercel.app/" target="_blank" class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card" data-observe>
+        <div class="card-img">
+          <img src="https://p1.hippopx.com/preview/278/286/333/science-no-person-biology-medicine.jpg" alt="Reveal" loading="lazy">
+          <span class="card-num">07</span>
+        </div>
+        <div class="card-body">
+          <p class="card-label">// Game · Strategy</p>
+          <h3 class="card-title"><a href="https://nozel-silva.github.io/Reveal-/" target="_blank">Reveal</a></h3>
+          <p class="card-desc">Strategic decision-making game built for bettors, card players & risk takers who think differently.</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://nozel-silva.github.io/Reveal-/" target="_blank" class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card" data-observe>
+        <div class="card-img">
+          <img src="https://p3.hippopx.com/preview/173/821/night-photography-low-light-photography-illuminated-dots-neon-lights-abstract-photography-close-up-shot-moody-atmosphere-glowing-dot-pattern-dark-background-bokeh-effect.jpg" alt="Image Upscale" loading="lazy">
+          <span class="card-num">08</span>
+        </div>
+        <div class="card-body">
+          <p class="card-label">// AI · Image Tool</p>
+          <h3 class="card-title"><a href="https://image-upscale-omega.vercel.app/" target="_blank">Image Upscale</a></h3>
+          <p class="card-desc">AI-driven tool that converts low-res images into crisp HD quality instantly, no setup required.</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://image-upscale-omega.vercel.app/" target="_blank" class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="stack" class="tech-section">
+    <div class="section-wrapper">
+      <p class="section-label" data-observe>Core Technologies</p>
+      <h2 class="section-title" data-observe>My Stack</h2>
+      <div class="tech-grid">
+        <div class="tech-item" data-observe><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+        <div class="tech-item" data-observe><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><span>JavaScript</span></div>
+        <div class="tech-item" data-observe><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span>React</span></div>
+        <div class="tech-item" data-observe><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
+        <div class="tech-item" data-observe><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"><span>PHP</span></div>
+        <div class="tech-item" data-observe><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Solidity"><span>Solidity</span></div>
+        <div class="tech-item" data-observe><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite"><span>SQLite</span></div>
       </div>
     </div>
+  </div>
 
-
-    
-    
-
-    <div class="project-card">
-      <img src="https://p3.hippopx.com/preview/173/821/night-photography-low-light-photography-illuminated-dots-neon-lights-abstract-photography-close-up-shot-moody-atmosphere-glowing-dot-pattern-dark-background-bokeh-effect.jpg" alt="AI image enhancement visualization" loading="lazy">
-      <div class="project-info">
-        <h3 class="project-title"><a href="https://image-upscale-omega.vercel.app/" target="_blank">Image Upscale</a></h3>
-        <p class="project-desc">AI-driven tool converting low-res images into crisp HD quality instantly.</p>
+  <div id="contact" class="section-wrapper">
+    <div class="contact-box" data-observe>
+      <h3 class="contact-title">Let's build something.</h3>
+      <p class="contact-sub">Got an idea, a collab, or just want to connect? I'm one message away.</p>
+      <div class="contact-links">
+        <a href="https://wa.me/2348035527091" target="_blank" class="contact-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          +234 803 552 7091
+        </a>
+        <a href="https://x.com/Nostalgic_Nuel" target="_blank" class="contact-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          @Nostalgic_Nuel
+        </a>
       </div>
     </div>
-
-
-    
-
-    
-    
-  </section>
-
-  <section>
-    <h2>Core Technologies</h2>
-    <div class="tech-stack">
-      <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
-      <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><span>JavaScript</span></div>
-      <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span>React</span></div>
-      <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
-      <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"><span>PHP</span></div>
-      <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Solidity"><span>Solidity</span></div>
-      <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite"><span>SQLite</span></div>
-    </div>
-  </section>
-
-  <section class="contact">
-    <h2>Get in Touch</h2>
-    <p>Whatsapp: <a href="https://wa.me/2348035527091">+234 803 552 7091</a></p>
-    <p>X / Twitter: <a href="https://x.com/Nostalgic_Nuel">@Nostalgic_Nuel</a></p>
-  </section>
+  </div>
 
   <footer>
-    <p>© 2026 • Nuel_sama🍀 • Crafted with code, curiosity & neon</p>
-    <div>
+    <p class="footer-copy">© 2026 · Nuel_sama🍀 · Crafted with code, curiosity & neon</p>
+    <div class="footer-links">
       <a href="https://x.com/Nuel_sama" target="_blank">X</a>
       <a href="https://github.com/Nozel-silva" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/emmanuel-agafie" target="_blank">LinkedIn</a>
@@ -381,16 +234,57 @@
   </footer>
 
   <script>
-    // Intersection Observer for fade-in
-    const observer = new IntersectionObserver((entries) => {
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.left = mx - 5 + 'px';
+      cursor.style.top = my - 5 + 'px';
+    });
+
+    (function animateRing() {
+      rx += (mx - rx - 18) * 0.12;
+      ry += (my - ry - 18) * 0.12;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
+      requestAnimationFrame(animateRing);
+    })();
+
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'scale(2)';
+        ring.style.transform = 'translate(-13px,-13px) scale(1.4)';
+        ring.style.borderColor = 'rgba(0,229,255,0.8)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'scale(1)';
+        ring.style.transform = 'translate(-13px,-13px) scale(1)';
+        ring.style.borderColor = 'rgba(0,229,255,0.5)';
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    const obs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          const delay = entry.target.dataset.delay || 0;
+          setTimeout(() => entry.target.classList.add('visible'), parseInt(delay));
+          obs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.12 });
 
-    document.querySelectorAll('section').forEach(el => observer.observe(el));
+    document.querySelectorAll('[data-observe]').forEach(el => obs.observe(el));
+
+    document.querySelectorAll('.project-card').forEach((card, i) => {
+      card.style.transitionDelay = (i % 3) * 0.12 + 's';
+    });
   </script>
+
 </body>
-</html>
+  </html>
