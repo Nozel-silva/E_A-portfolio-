@@ -89,7 +89,7 @@ nav.scrolled { padding: 0.8rem 2.5rem; background: rgba(8,11,16,0.95); }
 
 .nav-logo {
   font-family: 'Syne', sans-serif;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 1.2rem;
   color: var(--accent);
   letter-spacing: -0.5px;
